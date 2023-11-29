@@ -2,12 +2,11 @@
 body, html {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
   font-family: 'Montserrat', sans-serif;
   background: #1a1a1a;
   color: white;
   overflow: hidden;
+  font-size: 16px; /* Base font size; adjust as needed */
 }
 
 /* Styles for the particles.js container */
@@ -24,17 +23,16 @@ body, html {
 /* Navigation styles */
 .navigation {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: 1em;
-  font-family: 'Montserrat', sans-serif;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
 }
 
 .navigation a {
   color: white;
   text-decoration: none;
-  margin-left: 2em;
-  font-size: 1rem;
+  margin-left: 1rem;
+  font-size: 1rem; /* Size is relative to the root font size */
   transition: color 0.3s ease;
 }
 
@@ -45,43 +43,37 @@ body, html {
 /* Main content area */
 main {
   position: absolute;
-  top: 50vh;
-  left: 20vw;
-  transform: translate(-10vw, -50%);
-  max-width: 60vw;
-  width: 60vw;
-  box-sizing: border-box;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  max-width: 80%;
+  text-align: left;
+  z-index: 1;
 }
 
 /* Typography styles */
 h1 {
-  font-size: 4vw;
+  font-size: 2.5rem; /* Adjust font size using rem */
   font-weight: 700;
-  margin: 0 0 1vh 0;
+  margin: 0 0 1rem 0;
 }
 
 .tagline {
-  font-size: 1.5vw;
+  font-size: 1rem;
   font-weight: 400;
-  margin-top: 1vh;
+  margin-top: 0.5rem;
 }
 
-/* Add responsive design adjustments as needed */
 @media screen and (max-width: 768px) {
   .navigation a {
-    margin-left: 1em; /* Smaller margin for navigation links on smaller screens */
+    margin-left: 0.5rem;
   }
 
   h1 {
-    font-size: 6vw; /* Larger font size for the main heading on smaller screens */
+    font-size: 2rem; /* Larger font size on smaller screens */
   }
 
   .tagline {
-    font-size: 2vw; /* Larger font size for the tagline on smaller screens */
-  }
-
-  main {
-    left: 10vw; /* Adjust left position for smaller screens */
-    transform: translateY(-50%);
+    font-size: 0.875rem; /* Slightly larger font size on smaller screens */
   }
 }
