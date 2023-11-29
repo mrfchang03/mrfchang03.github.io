@@ -1,13 +1,13 @@
 particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 60,
+      "value": 75,
       "density": {
         "enable": true,
         "value_area": 500
       }
     },
-    "color": {
+    "color": {  
       "value": "#54585A"
     },
     "shape": {
