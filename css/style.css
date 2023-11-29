@@ -1,43 +1,87 @@
-/* ---- reset ---- */
-body {
-    margin: 0;
-    font: normal 75% Arial, Helvetica, sans-serif;
+/* Reset and global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background: #1a1a1a;
+  color: white;
+  overflow: hidden;
+}
+
+/* Styles for the particles.js container */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 0;
+}
+
+/* Navigation styles */
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navigation a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2em;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navigation a:hover {
+  color: #ccc;
+}
+
+/* Main content area */
+main {
+  position: absolute;
+  top: 50vh;
+  left: 20vw;
+  transform: translate(-10vw, -50%);
+  max-width: 60vw;
+  width: 60vw;
+  box-sizing: border-box;
+}
+
+/* Typography styles */
+h1 {
+  font-size: 4vw;
+  font-weight: 700;
+  margin: 0 0 1vh 0;
+}
+
+.tagline {
+  font-size: 1.5vw;
+  font-weight: 400;
+  margin-top: 1vh;
+}
+
+/* Add responsive design adjustments as needed */
+@media screen and (max-width: 768px) {
+  .navigation a {
+    margin-left: 1em; /* Smaller margin for navigation links on smaller screens */
   }
-  a
-  canvas {
-    display: block;
-    vertical-align: bottom;
+
+  h1 {
+    font-size: 6vw; /* Larger font size for the main heading on smaller screens */
   }
-  
-  /* ---- particles.js container ---- */
-  #particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom, 
-      #800000 0%, 
-      #960018 25%, 
-      #a70000 50%, 
-      #d10000 75%, 
-      #ff0033 100%
-    ); /* Gradient with specified shades of blue */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
+
+  .tagline {
+    font-size: 2vw; /* Larger font size for the tagline on smaller screens */
   }
-  
-  /* ---- Additional styling (if needed) ---- */
-  .count-particles {
-    /* Styles for particle count elements */
+
+  main {
+    left: 10vw; /* Adjust left position for smaller screens */
+    transform: translateY(-50%);
   }
-  
-  .js-count-particles {
-    /* Styles for JavaScript particle count elements */
-  }
-  
-  #stats, .count-particles {
-    -webkit-user-select: none;
-    /* Styles for stats elements */
-  }
-  
+}
