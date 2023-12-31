@@ -1,8 +1,11 @@
+/* Import Roboto font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Reset and global styles */
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Apply Roboto font */
   background: #1a1a1a;
   color: white;
   overflow: hidden;
@@ -23,21 +26,24 @@ body, html {
 /* Navigation styles */
 .navigation {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  z-index: 1;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10; /* Increased z-index for higher stack order if needed */
 }
 
 .navigation a {
   color: white;
   text-decoration: none;
-  margin-left: 1rem;
-  font-size: 1rem; /* Size is relative to the root font size */
-  transition: color 0.3s ease;
+  margin: 0 1rem; /* Uniform margin for left and right */
+  padding: 8px 16px; /* Padding inside the border */
+  border: 2px solid white; /* White border around the links */
+  transition: all 0.3s ease; /* Transition for all properties */
 }
 
 .navigation a:hover {
-  color: #ccc;
+  color: #000; /* Change text color on hover */
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
+  border-color: rgba(255, 255, 255, 0.6); /* Lighter white border color */
 }
 
 /* Main content area */
@@ -62,18 +68,25 @@ h1 {
   font-size: 1rem;
   font-weight: 400;
   margin-top: 0.5rem;
+  opacity: 0.5; /* Adjusted opacity */
 }
 
 @media screen and (max-width: 768px) {
+  .navigation {
+    top: 1rem;
+    right: 1rem;
+  }
+
   .navigation a {
-    margin-left: 0.5rem;
+    margin: 0 0.5rem; /* Adjusted margin for smaller screens */
+    padding: 4px 8px; /* Adjusted padding for smaller screens */
   }
 
   h1 {
-    font-size: 2rem; /* Larger font size on smaller screens */
+    font-size: 2rem; /* Adjusted font size for smaller screens */
   }
 
   .tagline {
-    font-size: 0.875rem; /* Slightly larger font size on smaller screens */
+    font-size: 0.875rem; /* Adjusted font size for smaller screens */
   }
 }
