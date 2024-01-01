@@ -3,98 +3,150 @@
 
 /* Reset and global styles */
 body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-    background: #116466; /* Green background for the body */
-    color: #D1E8E2; /* Light teal for text */
-    overflow-x: hidden; /* Hide horizontal scroll */
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to top, #0b020c, #023c86); /* Gradient background */
+  color: #deeff7; /* Text color */
+  overflow-x: hidden;
+  font-size: 16px;
+  height: 100%;
 }
 
-/* Styles for the particles.js container */
+/* Particles.js container */
 #particles-js {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 0;
 }
 
 /* Sidebar styling */
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #2C3531; /* Dark background for the sidebar */
-    padding: 20px;
-    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5); /* More visible shadow for contrast */
-    z-index: 10;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #003567; /* Sidebar background color */
+  padding: 20px;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 
 .sidebar-links {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .sidebar-links li a {
-    display: block;
-    padding: 10px 15px;
-    color: #D9B08C; /* Peach color for the sidebar text */
-    text-decoration: none;
-    font-size: 16px;
+  display: block;
+  padding: 10px 15px;
+  color: #D3D3D3; /* Or another chosen color */
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .sidebar-links li a:hover {
-    background-color: #FFCB9A; /* Light peach for hover */
-    border-left: 3px solid #D1E8E2; /* Light teal for the hover border */
+  background-color: #078c9b; /* Adjust if needed */
+  border-left: 3px solid #ffffff;
 }
 
+}
+.greeting {
+  
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: 400; /* Adjust the weight as needed */
+  color: #ffffff; /* Same color as the other text */
+  text-align: left; /* Aligns the text to the left */
+  margin: 0;
+  left: 80px;
+}
 /* Main content styling */
 main {
-  position: absolute; /* Use absolute positioning */
-  top: 50%; /* Center vertically */
-  left: 200px; /* Distance from the left edge of the viewport */
-  transform: translateY(-50%); /* Adjust for vertical centering */
+  position: absolute;
+  top:40%;
+  left:80px;
+  margin-left: 200px; /* Sidebar width */
   padding: 20px;
-  z-index: 1; /* Ensure it's above the background */
-  max-width: 600px; /* Adjust as needed */
-  text-align: left; /* Align text to left */
+  text-align: left;
+  z-index: 1;
+  max-width: 1000px; /* Adjust as needed */
 }
 
 /* Typography styles */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
-  color: #FFCB9A; /* Light peach for headings */
+  margin: 0;
+  color: #ffffff; /* Heading color */
 }
 
 .tagline {
   font-size: 1.2rem;
   font-weight: 400;
-  margin-bottom: 2rem;
-  color: #D1E8E2; /* Light teal for taglines */
+  margin-top: 0.5rem;
+  color: #ffffff; /* Tagline color */
+}
+
+/* Learn More Button and Arrow Container styling */
+.learn-more {
+  position: fixed; /* Fixed positioning */
+  bottom: 0; /* Position at the very bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Centering adjustment */
+  text-align: center;
+  z-index: 10; /* Ensures it's above other content */
+}
+
+.learn-more-button {
+  display: block;
+  color: #66FCF1; /* Cyan color */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.arrow-container {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.bi-arrow-down {
+  color: #66FCF1; /* Cyan color */
+  font-size: 2rem; /* Larger arrow icon */
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .sidebar {
-      width: 150px; /* Adjust sidebar for responsiveness */
+    width: 150px;
   }
 
   main {
-      left: 150px; /* Adjust left position for smaller screens */
-      transform: translateY(-50%); /* Keep vertical centering */
+    margin-left: 150px; /* Adjust for the sidebar width */
+    max-width: calc(100% - 150px); /* Adjust max-width for sidebar */
   }
 
-  h1, .tagline {
-      max-width: 90%; /* Adjust max-width for smaller screens */
+  .learn-more-button,
+  .bi-arrow-down {
+    font-size: smaller; /* Adjust font size for smaller screens */
   }
 }
 
-/* Add any additional styling as needed */
+/* Additional styles as needed */

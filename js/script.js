@@ -41,7 +41,7 @@ function updateParticles() {
                 }
             },
             "color": {  
-                "value": "#54585A"
+                "value": "#45A29E"
             },
             "shape": {
                 "type": "circle",
@@ -76,7 +76,7 @@ function updateParticles() {
             "line_linked": {
                 "enable": true,
                 "distance": 110,
-                "color": "#ffffff",
+                "color": "#45A29E",
                 "opacity": 0.4,
                 "width": 1
             },
