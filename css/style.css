@@ -3,90 +3,98 @@
 
 /* Reset and global styles */
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif; /* Apply Roboto font */
-  background: #1a1a1a;
-  color: white;
-  overflow: hidden;
-  font-size: 16px; /* Base font size; adjust as needed */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #116466; /* Green background for the body */
+    color: #D1E8E2; /* Light teal for text */
+    overflow-x: hidden; /* Hide horizontal scroll */
+    font-size: 16px;
 }
 
 /* Styles for the particles.js container */
 #particles-js {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  z-index: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 0;
 }
 
-/* Navigation styles */
-.navigation {
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  z-index: 10; /* Increased z-index for higher stack order if needed */
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #2C3531; /* Dark background for the sidebar */
+    padding: 20px;
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5); /* More visible shadow for contrast */
+    z-index: 10;
 }
 
-.navigation a {
-  color: white;
-  text-decoration: none;
-  margin: 0 1rem; /* Uniform margin for left and right */
-  padding: 8px 16px; /* Padding inside the border */
-  border: 2px solid white; /* White border around the links */
-  transition: all 0.3s ease; /* Transition for all properties */
+.sidebar-links {
+    list-style: none;
+    padding: 0;
 }
 
-.navigation a:hover {
-  color: #000; /* Change text color on hover */
-  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white background */
-  border-color: rgba(255, 255, 255, 0.6); /* Lighter white border color */
+.sidebar-links li a {
+    display: block;
+    padding: 10px 15px;
+    color: #D9B08C; /* Peach color for the sidebar text */
+    text-decoration: none;
+    font-size: 16px;
 }
 
-/* Main content area */
+.sidebar-links li a:hover {
+    background-color: #FFCB9A; /* Light peach for hover */
+    border-left: 3px solid #D1E8E2; /* Light teal for the hover border */
+}
+
+/* Main content styling */
 main {
-  position: absolute;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%, -50%);
-  max-width: 80%;
-  text-align: left;
-  z-index: 1;
+  position: absolute; /* Use absolute positioning */
+  top: 50%; /* Center vertically */
+  left: 200px; /* Distance from the left edge of the viewport */
+  transform: translateY(-50%); /* Adjust for vertical centering */
+  padding: 20px;
+  z-index: 1; /* Ensure it's above the background */
+  max-width: 600px; /* Adjust as needed */
+  text-align: left; /* Align text to left */
 }
 
 /* Typography styles */
 h1 {
-  font-size: 2.5rem; /* Adjust font size using rem */
+  font-size: 2.5rem;
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin-bottom: 1rem;
+  color: #FFCB9A; /* Light peach for headings */
 }
 
 .tagline {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  margin-top: 0.5rem;
-  opacity: 0.5; /* Adjusted opacity */
+  margin-bottom: 2rem;
+  color: #D1E8E2; /* Light teal for taglines */
 }
 
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-  .navigation {
-    top: 1rem;
-    right: 1rem;
+  .sidebar {
+      width: 150px; /* Adjust sidebar for responsiveness */
   }
 
-  .navigation a {
-    margin: 0 0.5rem; /* Adjusted margin for smaller screens */
-    padding: 4px 8px; /* Adjusted padding for smaller screens */
+  main {
+      left: 150px; /* Adjust left position for smaller screens */
+      transform: translateY(-50%); /* Keep vertical centering */
   }
 
-  h1 {
-    font-size: 2rem; /* Adjusted font size for smaller screens */
-  }
-
-  .tagline {
-    font-size: 0.875rem; /* Adjusted font size for smaller screens */
+  h1, .tagline {
+      max-width: 90%; /* Adjust max-width for smaller screens */
   }
 }
+
+/* Add any additional styling as needed */
