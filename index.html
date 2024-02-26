@@ -50,20 +50,49 @@
     <p class="tagline">Aspiring Software Engineer with a focus on back-end development, and developer experience</p>
     <!-- Learn More Button -->
     <div class="learn-more">
-      <a href="#additional-content" class="learn-more-button">Learn More!</a>
+      <a href="#projects-section" class="learn-more-button">Learn More!</a>
       <div class="arrow-container">
         <i class="bi bi-arrow-down"></i>
       </div>
     </div>
-    <!-- Additional content goes here -->
-    <div id="additional-content">
-      <!-- Content after clicking 'Learn More' -->
+    <!-- Projects Section -->
+    <div id="projects-section" style="display: none;"> <!-- The projects section is initially hidden -->
+      <section id="pomodoro-extension">
+        <h2>Pomodoro Google Extension</h2>
+        <h3>Crafting Rhythms of Productivity</h3>
+        <p>
+          "Pomodoro Extension elevates the traditional Pomodoro technique into a symphony of focus and relaxation. Our Google Chrome extension infuses the scientifically-backed work-break cycle with the soothing sounds of lo-fi beats streamed directly from YouTube, using the YouTube API to curate a backdrop of focus-enhancing tunes. It's designed for the multitasker—synchronize your productivity sessions across multiple tabs and stay alerted with custom notifications, ensuring you're always in tune with your work's rhythm. The visual indicators are a sleek, interactive way to track your progress through each Pomodoro cycle, whether deep in focus or during a well-earned break. Written in the foundational web languages of JavaScript, CSS, and HTML, 'Pomodoro Harmony' is an ode to the art of focused work, reimagined for today's digital nomad."
+        </p>
+        <ul class="project-features">
+          <li>Lofi music streaming via YouTube API for an immersive focus experience</li>
+          <li>Multi-tab synchronization to keep your flow uninterrupted</li>
+          <li>Auditory and visual alerts to signify transitions between work and rest</li>
+          <li>A visual representation of work/break cycles for productivity tracking</li>
+        </ul>
+        <p>Built With: JavaScript, CSS, HTML, YouTube API</p>
+      </section>
+      <!-- Additional projects can be added here -->
     </div>
   </main>
 
   <!-- Include particles.js library -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- Custom JavaScript -->
   <script src="js/script.js"></script>
+  <!-- Smooth Scrolling and Reveal JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelector('.learn-more-button').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the default anchor behavior
+
+        const projectsSection = document.querySelector('#projects-section');
+        projectsSection.style.display = 'block'; // Reveal the projects section
+
+        // Smoothly scroll to the projects section
+        projectsSection.scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
