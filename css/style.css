@@ -108,3 +108,9 @@ h1 {
     padding: 10px;
   }
   
+/* Project section styling */
+#projects-section {
+  min-height: 100vh; /* Set minimum height to fill the viewport */
+  padding: 20px; /* Add padding as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
