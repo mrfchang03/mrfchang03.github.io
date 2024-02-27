@@ -85,10 +85,28 @@ main {
   left: 50%; /* Center horizontally */
   transform: translateX(-50%); /* Adjust for precise centering */
   z-index: 2; /* Ensures it's above other content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .learn-more-button, .bi-arrow-down {
   color: #66FCF1; /* Styling adjustments as needed */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Arrow starts at its original position */
+  }
+  50% {
+    transform: translateY(-10px); /* Arrow moves up 10 pixels */
+  }
+}
+
+.bi-arrow-down {
+  display: inline-block;
+  animation: bounce 1s ease-in-out infinite;
 }
 
 /* Typography styles */
@@ -104,8 +122,16 @@ h1 {
   padding-top: 100vh; /* This pushes the content down so it starts after the main content */
   margin-top: -100vh; /* This pulls the actual container back up so it sits directly under the main content */
   z-index: 1; /* Below the main content */
+  width: calc(100% - 220 px)
   display: block; /* Ensure the section is always visible */
 }
+/* Ensuring the target section is styled appropriately */
+#projects-section {
+  /* Your styles for the projects section */
+  min-height: 100vh; /* Ensure it's at least the height of the viewport */
+  padding: 20px; /* Add padding for aesthetic reasons, if needed */
+}
+
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
@@ -123,12 +149,7 @@ div.space {
   height: 100vh; /* This creates a full viewport height of space */
 }
 
-/* Ensuring the target section is styled appropriately */
-#projects-section {
-  /* Your styles for the projects section */
-  min-height: 100vh; /* Ensure it's at least the height of the viewport */
-  padding: 20px; /* Add padding for aesthetic reasons, if needed */
-}
+
 
 /* Checking for overflows in the body or any container */
 
