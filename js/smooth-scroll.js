@@ -2,6 +2,12 @@ $(document).ready(function() {
   var learnMoreButton = $('.learn-more-button');
   var originalPosition = learnMoreButton.offset().top; // Get the original top offset of the button
 
+  function recalculateOriginalPosition() {
+    originalPosition = learnMoreButton.offset().top;
+    console.log("Recalculated Original Position:", originalPosition); // Debugging position recalculation
+}
+$(window).resize(recalculateOriginalPosition);
+
   learnMoreButton.click(function(e) {
       e.preventDefault(); // Prevent the default anchor behavior
 
@@ -25,4 +31,16 @@ $(document).ready(function() {
           learnMoreButton.fadeOut();
       }
   });
+  recalculateOriginalPosition();
 });
+
+// Listen for scroll events on the window
+window.addEventListener('scroll', function() {
+    // Check if the page has been scrolled down from the top
+    if (window.pageYOffset > 0) {
+      document.body.classList.add('gradient-invert');
+    } else {
+      document.body.classList.remove('gradient-invert');
+    }
+  });
+  

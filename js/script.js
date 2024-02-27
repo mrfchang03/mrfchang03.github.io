@@ -3,30 +3,16 @@ function updateParticles() {
     var particleCount;
     var valueArea;
 
-    if (width <= 1200) {  
-        particleCount = 500;
-        valueArea = 800; 
-    } else if (width <= 1000) {  
-        particleCount = 700;  
-        valueArea = 800;     
-    } else if (width <= 800) {  
-        particleCount = 700;  
-        valueArea = 800;    
-    } else if (width <= 600) {  
-        particleCount = 700;  
-        valueArea = 800;  
-    } else if (width <= 400) {  
-        particleCount = 700; 
-        valueArea = 800;      
-    } else if (width <= 2400) {  
+    // Correct the logical progression of window width checks
+    if (width > 2400) {  
+        particleCount = 100;  
+        valueArea = 1400;     
+    } else if (width > 1200) {  
         particleCount = 205;  
         valueArea = 1000;     
-    } else if (width <= 3600) {  
-        particleCount = 150;   
-        valueArea = 1200;     
-    } else {  
-        particleCount = 100;   
-        valueArea = 1400;     
+    } else {  // Simplify conditions for smaller widths
+        particleCount = 700;  
+        valueArea = 800;      
     }
 
 
@@ -143,3 +129,15 @@ updateParticles();
 
 // Update particle count when the window is resized
 window.addEventListener('resize', updateParticles);
+window.addEventListener('scroll', function() {
+    var body = document.body;
+    var scrollHeight = window.pageYOffset;
+    
+    // Set a scroll threshold to trigger the gradient reversal
+    var scrollThreshold = 100;
+  
+    if (scrollHeight > scrollThreshold && !body.classList.contains('gradient-reversed')) {
+      body.classList.remove('gradient-original');
+      body.classList.add('gradient-reversed');
+    }
+  });
