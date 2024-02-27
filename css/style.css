@@ -66,12 +66,12 @@ main {
   max-width: 1000px; /* Adjust as needed */
 }
 
-/* Typography styles */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #ffffff; /* Heading color */
+/* Ensure the main content takes up the full viewport height */
+.main-content {
+  min-height: 100vh;
+  width: 100%;
+  position: relative; /* This makes sure that the particles.js canvas is positioned correctly within */
+  z-index: 2; /* Above the projects section */
 }
 
 /* Learn More Button and Arrow Container styling */
@@ -87,30 +87,50 @@ h1 {
   color: #66FCF1; /* Styling adjustments as needed */
 }
 
-/* Keyframes and animations unchanged */
+/* Typography styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff; /* Heading color */
+}
+
+/* Project section styling */
+#projects-section {
+  padding-top: 100vh; /* This pushes the content down so it starts after the main content */
+  margin-top: -100vh; /* This pulls the actual container back up so it sits directly under the main content */
+  z-index: 1; /* Below the main content */
+  display: block; /* Ensure the section is always visible */
+}
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .sidebar, main, .learn-more-button, .bi-arrow-down {
     /* Responsive adjustments as previously defined */
   }
+  main {
+    margin-left: 220px; /* Adjust for the sidebar width on smaller screens */
+    padding: 20px;
+  }
 }
 
-/* Additional styles as needed */
-#pomodoro-harmony {
-  padding: 20px; /* Add padding as needed */
-  margin-top: -50px; /* Adjust this to overlap with the bottom of the main section if needed */
-  /* This will be below the main section and only visible upon scrolling */
+/* Ensuring sufficient space is added */
+div.space {
+  height: 100vh; /* This creates a full viewport height of space */
 }
-@media screen and (max-width: 768px) {
-  main {
-    margin-left: 0; /* Adjust for the sidebar width on smaller screens */
-    padding: 10px;
-  }
-  
-/* Project section styling */
+
+/* Ensuring the target section is styled appropriately */
 #projects-section {
-  min-height: 100vh; /* Set minimum height to fill the viewport */
-  padding: 20px; /* Add padding as needed */
-  overflow-y: auto; /* Enable vertical scrolling */
+  /* Your styles for the projects section */
+  min-height: 100vh; /* Ensure it's at least the height of the viewport */
+  padding: 20px; /* Add padding for aesthetic reasons, if needed */
+}
+
+/* Checking for overflows in the body or any container */
+body, html {
+  overflow-x: hidden; /* Only hide horizontal overflow if necessary */
+}
+
+html {
+  scroll-behavior: smooth;
 }
