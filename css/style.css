@@ -8,12 +8,20 @@ body, html {
   color: #deeff7; /* Text color */
   font-size: 16px;
   height: 100%;
+  min-height: 400px;
   background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027); /* Initial light to dark gradient */
 }
-
 /* This class will be added via JavaScript when user scrolls */
 .gradient-invert {
   background: linear-gradient(to top, #2c5364, #203a43, #0f2027) !important; /* Inverted dark to light gradient */
+}
+
+/* Typography styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff; /* Heading color */
 }
 
 /* Particles.js container */
@@ -69,15 +77,14 @@ main {
   z-index: 1;
   max-width: 1000px; /* Adjust as needed */
 }
-
 /* Ensure the main content takes up the full viewport height */
 .main-content {
   min-height: 100vh;
   width: 100%;
   position: relative; /* This makes sure that the particles.js canvas is positioned correctly within */
   z-index: 2; /* Above the projects section */
+  margin-bottom: 0;
 }
-
 /* Learn More Button and Arrow Container styling */
 .learn-more {
   position: fixed; /* Changed to fixed to position relative to the viewport */
@@ -109,29 +116,35 @@ main {
   animation: bounce 1s ease-in-out infinite;
 }
 
-/* Typography styles */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin: 0;
-  color: #ffffff; /* Heading color */
+.About-Me {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  margin-right: 220px; /* Adjust if necessary to not overlap the sidebar */
+  position: relative;
 }
+
+
 
 /* Project section styling */
 #projects-section {
-  padding-top: 100vh;
-  margin-top: -100vh;
+  /* Remove padding-top and margin-top that cause overlapping */
   z-index: 1;
-  display: flex; /* changed to flex to center the child */
+  display: flex;
   flex-direction: column;
-  justify-content: center; /* centers child horizontally */
+  justify-content: center;
   align-items: center;
-  text-align: center; /* centers child vertically */
+  text-align: center;
   min-height: 100vh;
-  padding: 20px;
-  margin-right: 220px;
-  position: relative; /* for positioning the pseudo-element for the blur effect */
+  padding: 20px; /* Keep padding for spacing inside the section */
+  margin-right: 220px; /* Adjust if necessary to not overlap the sidebar */
+  position: relative;
 }
+
 #pomodoro-extension h2,
 #pomodoro-extension h3,
 #pomodoro-extension p,
@@ -154,7 +167,7 @@ h1 {
 }
 
 #pomodoro-extension:hover {
-  transform: scale(1.05); /* Enlarges the element */
+  transform: scale(1.02); /* Enlarges the element */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the hover border color if needed */
 }
 

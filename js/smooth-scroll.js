@@ -14,7 +14,7 @@ $(document).ready(function() {
   learnMoreButton.click(function(e) {
     e.preventDefault();
     $('html, body').animate({
-      scrollTop: $('#projects-section').offset().top
+      scrollTop: $('.About-Me').offset().top
     }, 3000, function() {
       learnMoreButton.hide();
       arrowContainer.hide();
