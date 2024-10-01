@@ -4,23 +4,27 @@ $(document).ready(function() {
   var originalPosition = learnMoreButton.offset().top;
   var scrolled = false; // Flag to track if the user has scrolled
 
+  // Function to recalculate the original position of the learn more button
   function recalculateOriginalPosition() {
     originalPosition = learnMoreButton.offset().top;
     console.log("Recalculated Original Position:", originalPosition);
   }
 
+  // Recalculate position when window is resized
   $(window).resize(recalculateOriginalPosition);
 
+  // Smooth scroll to About Me section when clicking 'Learn More' button
   learnMoreButton.click(function(e) {
     e.preventDefault();
     $('html, body').animate({
-      scrollTop: $('.About-Me').offset().top
+      scrollTop: $('#about-me-section').offset().top
     }, 3000, function() {
-      learnMoreButton.hide();
-      arrowContainer.hide();
+      learnMoreButton.hide(); // Hide 'Learn More' button after scrolling
+      arrowContainer.hide(); // Also hide the arrow container
     });
   });
 
+  // Hide the 'Learn More' button and arrow when user starts to scroll manually
   $(window).scroll(function() {
     if (!scrolled) {
       learnMoreButton.hide();
@@ -29,10 +33,11 @@ $(document).ready(function() {
     }
   });
 
+  // Recalculate the original position of the button on load
   recalculateOriginalPosition();
 });
 
-// Listen for scroll events on the window
+// Additional scroll logic for inverting the background gradient
 window.addEventListener('scroll', function() {
   // Check if the page has been scrolled down from the top
   if (window.pageYOffset > 0) {

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* Reset and global styles */
-body{
+body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
@@ -10,10 +10,7 @@ body{
   height: 100%;
   min-height: 400px;
   background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027); /* Initial light to dark gradient */
-}
-/* This class will be added via JavaScript when user scrolls */
-.gradient-invert {
-  background: linear-gradient(to top, #2c5364, #203a43, #0f2027) !important; /* Inverted dark to light gradient */
+  overflow: hidden; /* Prevent scrolling */
 }
 
 /* Typography styles */
@@ -31,8 +28,8 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1; /* Make sure particles are behind the content */
   background-color: transparent;
-  z-index: 2;
 }
 
 /* Sidebar styling */
@@ -45,7 +42,7 @@ h1 {
   background-color: #203a43;
   padding: 20px;
   box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 15;
 }
 
 .sidebar-links {
@@ -66,73 +63,132 @@ h1 {
   border-left: 3px solid #ffffff;
 }
 
-/* Main content styling */
-main {
+/* Home Screen (Title Page) */
+#home-screen {
   position: absolute;
-  top: 40%;
-  left: 80px;
+  top: 40%; /* Old CSS positioning from main */
+  left: 80px; /* Old CSS left alignment */
+  width: auto;
   margin-left: 200px; /* Sidebar width */
   padding: 20px;
-  text-align: left;
-  z-index: 1;
+  text-align: left; /* Align text to the left */
+  z-index: 10; /* Keep above particles.js */
+  background: none; /* Ensure no background for the home screen */
   max-width: 1000px; /* Adjust as needed */
 }
-/* Ensure the main content takes up the full viewport height */
-.main-content {
-  min-height: 100vh;
-  width: 100%;
-  position: relative; /* This makes sure that the particles.js canvas is positioned correctly within */
-  z-index: 2; /* Above the projects section */
-  margin-bottom: 0;
+
+#home-screen .greeting {
+  font-size: 2.5rem; /* Keeps the large heading size */
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
 }
-/* Learn More Button and Arrow Container styling */
+
+/* Heading (Name) styles */
+#home-screen h1 {
+  font-size: 4rem; /* Keeps large font size for name */
+  font-weight: 700; /* Bold */
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Tagline/Description */
+#home-screen .tagline {
+  font-size: 1.2rem; /* Matches the smaller paragraph size */
+  font-weight: 400;
+  margin-top: 20px;
+  color: #deeff7;
+  max-width: 1000px; /* Limit width for readability */
+  white-space: nowrap; /* Ensure tagline stays on one line */
+}
+
+/* Learn More Button */
 .learn-more {
-  position: fixed; /* Changed to fixed to position relative to the viewport */
-  bottom: 20px; /* Position at the bottom of the viewport */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for precise centering */
-  z-index: 2; /* Ensures it's above other content */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%; /* Centers the learn more button */
+  transform: translateX(-50%);
+  z-index: 11;
 }
 
 .learn-more-button, .bi-arrow-down {
-  color: #66FCF1; /* Styling adjustments as needed */
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0); /* Arrow starts at its original position */
-  }
-  50% {
-    transform: translateY(-10px); /* Arrow moves up 10 pixels */
-  }
+  color: #66FCF1;
 }
 
 .bi-arrow-down {
   display: inline-block;
+  color: #66FCF1;
   animation: bounce 1s ease-in-out infinite;
 }
 
-.About-Me {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  margin-right: 220px; /* Adjust if necessary to not overlap the sidebar */
-  position: relative;
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
+/* About Me, Projects, Contact Sections */
+.section-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Ensures close button is positioned relative to this */
+}
 
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 20;
+}
 
-/* Project section styling */
-#projects-section {
-  /* Remove padding-top and margin-top that cause overlapping */
+.close-btn:hover {
+  color: #ff0000; /* Optional: Change color on hover */
+}
+
+/* Fade-in and fade-out classes for smooth transition */
+.screen {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* About Me Section */
+#about-me-section {
   z-index: 3;
   display: flex;
   flex-direction: column;
@@ -141,101 +197,55 @@ main {
   text-align: center;
   min-height: 100vh;
   padding: 20px; /* Keep padding for spacing inside the section */
-  margin-right: 220px; /* Adjust if necessary to not overlap the sidebar */
   position: relative;
 }
 
-#pomodoro-extension h2,
-#pomodoro-extension h3,
-#pomodoro-extension p,
-#pomodoro-extension ul {
-  margin: 0; /* Remove default margin */
-  padding: 0.5em; /* Add padding for spacing */
-}
-#pomodoro-extension ul {
-  list-style: none; /* Remove bullet points from the list */
-  padding: 0; /* Remove default padding */
-}
-
-#pomodoro-extension li {
-  margin-bottom: 0.5em; /* Add space between list items */
-}
-
-#pomodoro-extension {
-  border: 2px solid white; /* Adjust the color to match your background */
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-#pomodoro-extension:hover {
-  transform: scale(1.02); /* Enlarges the element */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adjust the hover border color if needed */
-}
-
-
-/* Button Styles */
-#pomodoro-extension a button {
-  color: white; /* Maintains text color as white */
-  background-color: transparent; /* Starts as clear */
-  border: 2px solid white; /* Adds a white border to make the button visible */
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#pomodoro-extension a button:hover {
-  background-color: white; /* Changes to white on hover */
-  color: black; /* Change text color to ensure readability */
-  transform: translateY(-2px); /* Subtle lift effect */
-}
-
-
-/* Ensure the button aligns well within the flex container */
-#pomodoro-extension {
+/* Classes Section */
+#classes-section {
+  z-index: 999;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Projects Section */
+#projects-section {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px; /* Keep padding for spacing inside the section */
+  position: relative;
+}
+
+
+/* Contact Section */
+#contact-section {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
 }
 
 /* Adjustments for smaller screens or responsive design */
 @media (max-width: 768px) {
-  #projects-section {
-    margin-right: 0; /* Adjust margin for smaller screens */
-    padding: 20px;
+  #home-screen {
+    left: 20px; /* Reduce left margin on smaller screens */
   }
-}
 
-
-
-
-
-
-
-
-#projects-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: inherit;
-  z-index: -1;
-  filter: blur(0px);
-  transition: filter 0.3s ease;
-}
-
-#projects-section:hover::before {
-  filter: blur(8px);
-}
-
-
-
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
   .sidebar, main, .learn-more-button, .bi-arrow-down {
     /* Responsive adjustments as previously defined */
   }
@@ -245,14 +255,9 @@ main {
   }
 }
 
-/* Ensuring sufficient space is added */
 div.space {
   height: 100vh; /* This creates a full viewport height of space */
 }
-
-
-
-/* Checking for overflows in the body or any container */
 
 html {
   scroll-behavior: smooth;
