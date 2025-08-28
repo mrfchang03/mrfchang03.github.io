@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Reset and global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #deeff7; /* Text color */
+  font-size: 16px;
+  height: 100%;
+  min-height: 400px;
+  background: linear-gradient(to bottom, #2c5364, #203a43, #0f2027); /* Initial light to dark gradient */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Typography styles */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff; /* Heading color */
+}
+
+/* Particles.js container */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Make sure particles are behind the content */
+  background-color: transparent;
+}
+
+/* Sidebar styling */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #203a43;
+  padding: 20px;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  z-index: 15;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-links li a {
+  display: block;
+  padding: 10px 15px;
+  color: #D3D3D3;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar-links li a:hover {
+  background-color: #078c9b;
+  border-left: 3px solid #ffffff;
+}
+
+/* Home Screen (Title Page) */
+#home-screen {
+  position: absolute;
+  top: 40%; /* Old CSS positioning from main */
+  left: 80px; /* Old CSS left alignment */
+  width: auto;
+  margin-left: 200px; /* Sidebar width */
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  z-index: 10; /* Keep above particles.js */
+  background: none; /* Ensure no background for the home screen */
+  max-width: 1000px; /* Adjust as needed */
+}
+
+#home-screen .greeting {
+  font-size: 2.5rem; /* Keeps the large heading size */
+  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Heading (Name) styles */
+#home-screen h1 {
+  font-size: 4rem; /* Keeps large font size for name */
+  font-weight: 700; /* Bold */
+  margin: 0;
+  color: #ffffff;
+}
+
+/* Tagline/Description */
+#home-screen .tagline {
+  font-size: 1.2rem; /* Matches the smaller paragraph size */
+  font-weight: 400;
+  margin-top: 20px;
+  color: #deeff7;
+  max-width: 1000px; /* Limit width for readability */
+  white-space: nowrap; /* Ensure tagline stays on one line */
+}
+
+/* Learn More Button */
+.learn-more {
+  position: fixed;
+  bottom: 20px;
+  left: 50%; /* Centers the learn more button */
+  transform: translateX(-50%);
+  z-index: 11;
+}
+
+.learn-more-button, .bi-arrow-down {
+  color: #66FCF1;
+}
+
+.bi-arrow-down {
+  display: inline-block;
+  color: #66FCF1;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* About Me, Projects, Contact Sections */
+.section-content {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background with opacity */
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 600px;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Ensures close button is positioned relative to this */
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.close-btn:hover {
+  color: #ff0000; /* Optional: Change color on hover */
+}
+
+/* Fade-in and fade-out classes for smooth transition */
+.screen {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.screen.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+/* About Me Section */
+#about-me-section {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px; /* Keep padding for spacing inside the section */
+  position: relative;
+}
+
+/* Classes Section */
+#classes-section {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Projects Section */
+#projects-section {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px; /* Keep padding for spacing inside the section */
+  position: relative;
+}
+
+
+/* Contact Section */
+#contact-section {
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Adjustments for smaller screens or responsive design */
+@media (max-width: 768px) {
+  #home-screen {
+    left: 20px; /* Reduce left margin on smaller screens */
+  }
+
+  .sidebar, main, .learn-more-button, .bi-arrow-down {
+    /* Responsive adjustments as previously defined */
+  }
+  main {
+    margin-left: 220px; /* Adjust for the sidebar width on smaller screens */
+    padding: 20px;
+  }
+}
+
+div.space {
+  height: 100vh; /* This creates a full viewport height of space */
+}
+
+html {
+  scroll-behavior: smooth;
+}

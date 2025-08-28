@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Force a unified, 1s transition on EVERY property */
+  *, *::before, *::after {
+    transition: all 1000ms ease-in-out !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      transition: none !important;
+    }
+  }
+
+  html, body, #__next { @apply h-full; }
+
+  /* Dark is default */
+  body { @apply font-primary antialiased leading-loose bg-primary text-textDark; }
+
+  /* Light when .dark is removed */
+  html:not(.dark) body { @apply bg-surfaceLight text-textLight; }
+
+  /* Typography */
+  .h1 { @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold; }
+  .h2 { @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold; }
+  .h3 { @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold; }
+
+  /* Links — orange accent */
+  a { @apply text-accent hover:text-accentHover underline-offset-4 hover:underline; }
+
+  .text-outline { -webkit-text-stroke: 1px #ffffff; }
+  .text-outline-hover { -webkit-text-stroke: 1px #ee9b00; }
+
+  ::selection { background: theme(colors.accent / 0.25); }
+
+  img, video, canvas, svg { @apply max-w-full h-auto; }
+}
+
+@layer components {
+  .card-surface { @apply rounded-xl p-6 bg-surfaceDark/70 shadow-sm backdrop-blur; }
+  html:not(.dark) .card-surface { @apply bg-white/70 shadow-sm; }
+
+  .btn-accent { @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-semibold bg-accent text-white hover:bg-accentHover; }
+}
+
+@layer utilities {
+  .min-h-screen-safe { min-height: 100svh; }
+}
