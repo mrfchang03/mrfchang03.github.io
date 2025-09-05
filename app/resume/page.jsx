@@ -125,7 +125,8 @@ const experience = {
     {
       company: "Personal Project",
       position: "Portfolio Website",
-      link: "https://github.com/mrfchang03/your-portfolio", // or the deployed link if you have one
+      duration: "2025",
+      link: "https://mrfchang03.github.io/", 
       bullets: [
         "Designed and developed a personal portfolio website to showcase projects, resume, and contact information.",
         "Built with React, Next.js, Tailwind CSS for responsive design and modern UI components.",
