@@ -113,12 +113,13 @@ const experience = {
     // 🔻 UPDATED: Independent Research (recruiter-friendly)
     {
       company: "Independent Research",
-      position: "Cancer Research Data Collaboration",
+      position: "Understanding the Canadian Interventional Radiology Landscape Through the Canadian Association of Interventional Radiology (CAIR) database: a descriptive study",
       duration: "2025",
       link: "https://github.com/mrfchang03/Population_Geographical-Statistics",
       bullets: [
+        "Published peer-reviewed article “Understanding the Canadian Interventional Radiology Landscape” in the Canadian Association of Radiologists Journal (DOI: 10.1177/08465371251385534).",
         "Processed and linked 1.3M Canadian postal codes (PCCF) from raw .txt files using Python/pandas, building a reproducible ETL pipeline.",
-        "Mapped postal codes to Statistics Canada census divisions for national geospatial analysis; prepared validated datasets for an IR disparities study (submitted to CMAJ).",
+        "Mapped postal codes to Statistics Canada census divisions for national geospatial analysis; prepared validated datasets for an IR disparities study (approved by CARJ).",
         "Optimized large-scale joins and QA with Arrow strings/chunked I/O; documented data hygiene, validation checks, and outputs.",
       ],
     },
@@ -152,7 +153,7 @@ const education = {
 
 // skills data
 const skills = {
-  title: "My skills",
+  title: "My Skills",
   description:
     "I enjoy working across the stack, from building APIs with Python and Node.js to creating responsive web apps with React and Next.js. I’m comfortable with tools like TailwindCSS, SQL, and Pandas, and I’m always eager to pick up new technologies to improve my work.",
   skillList: [
