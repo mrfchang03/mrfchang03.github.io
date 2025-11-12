@@ -89,14 +89,14 @@ const experience = {
   items: [
     {
       company: "Team Project",
-      position: "Rave Routes — Full‑Stack Web App",
+      position: "Rave Routes — Full-Stack Web App",
       duration: "May 2024 – Present",
       link: "https://github.com/mrfchang03/Rave-Routes",
       bullets: [
         "Developing a web app for music fans to track favorite artists’ live performances and plan travel (flights & hotels).",
         "Integrated OpenAI API to generate personalized itineraries and packing lists.",
         "Utilized Amadeus API for real-time flight and hotel data; implemented artist tracking and event listings.",
-        "Built a responsive UI in React; Flask backend for REST endpoints (NLP + third‑party API orchestration).",
+        "Built a responsive UI in React; Flask backend for REST endpoints (NLP + third-party API orchestration).",
       ],
     },
     {
@@ -105,31 +105,34 @@ const experience = {
       duration: "Jan 2024 – Feb 2024",
       link: "https://github.com/zachjohnston/pomodoro-extension",
       bullets: [
-        "Built a Chrome extension integrating the Pomodoro technique with lo‑fi YouTube streams to boost focus.",
-        "Implemented multi‑tab sync and visual progress indicators for work/rest cycles.",
+        "Built a Chrome extension integrating the Pomodoro technique with lo-fi YouTube streams to boost focus.",
+        "Implemented multi-tab sync and visual progress indicators for work/rest cycles.",
         "JavaScript, HTML, CSS, YouTube API for async communication and dynamic UI updates.",
       ],
     },
+    // 🔻 UPDATED: Independent Research (recruiter-friendly)
     {
-      company: "SFU Research Project",
-      position: "Cancer Research Data Collaboration",
+      company: "Independent Research",
+      position: "Understanding the Canadian Interventional Radiology Landscape Through the Canadian Association of Interventional Radiology (CAIR) database: a descriptive study",
       duration: "2025",
       link: "https://github.com/mrfchang03/Population_Geographical-Statistics",
       bullets: [
-        "Processed and validated 1.3M Canadian postal codes (PCCF) and matched them to patient demographic/geographic data using Python.",
-        "Prepared finalized, validated datasets for a national interventional radiology study (manuscript submitted to CARJ).",
+        "Published peer-reviewed article “Understanding the Canadian Interventional Radiology Landscape” in the Canadian Association of Radiologists Journal (DOI: 10.1177/08465371251385534).",
+        "Processed and linked 1.3M Canadian postal codes (PCCF) from raw .txt files using Python/pandas, building a reproducible ETL pipeline.",
+        "Mapped postal codes to Statistics Canada census divisions for national geospatial analysis; prepared validated datasets for an IR disparities study (approved by CARJ).",
+        "Optimized large-scale joins and QA with Arrow strings/chunked I/O; documented data hygiene, validation checks, and outputs.",
       ],
     },
     {
-  company: "Personal Project",
-  position: "Portfolio Website",
-  link: "https://github.com/mrfchang03/your-portfolio", // or the deployed link if you have one
-  bullets: [
-    "Designed and developed a personal portfolio website to showcase projects, resume, and contact information.",
-    "Built with React, Next.js, Tailwind CSS for responsive design and modern UI components.",
-    "Implemented smooth animations with Framer Motion and reusable components for scalability.",
-  ],
-}
+      company: "Personal Project",
+      position: "Portfolio Website",
+      link: "https://github.com/mrfchang03/your-portfolio", // or the deployed link if you have one
+      bullets: [
+        "Designed and developed a personal portfolio website to showcase projects, resume, and contact information.",
+        "Built with React, Next.js, Tailwind CSS for responsive design and modern UI components.",
+        "Implemented smooth animations with Framer Motion and reusable components for scalability.",
+      ],
+    },
   ],
 };
 
@@ -150,7 +153,7 @@ const education = {
 
 // skills data
 const skills = {
-  title: "My skills",
+  title: "My Skills",
   description:
     "I enjoy working across the stack, from building APIs with Python and Node.js to creating responsive web apps with React and Next.js. I’m comfortable with tools like TailwindCSS, SQL, and Pandas, and I’m always eager to pick up new technologies to improve my work.",
   skillList: [
@@ -166,7 +169,6 @@ const skills = {
     { icon: <SiC />, name: "c" },
     { icon: <SiMysql />, name: "sql" },
     { icon: <SiR />, name: "R / RStudio" },
-   
   ],
 };
 
@@ -231,7 +233,9 @@ const Resume = () => {
                             {item.position}
                           </a>
                         ) : (
-                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-left">{item.position}</h3>
+                          <h3 className="text-xl max-w-[260px] min-h-[60px] text-left">
+                            {item.position}
+                          </h3>
                         )}
                         <div className="flex items-center gap-3">
                           <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
@@ -319,36 +323,34 @@ const Resume = () => {
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0">
                   {about.info.map((item, index) => (
-  <li
-    key={index}
-    className="flex items-center justify-center xl:justify-start gap-4"
-  >
-    <span className="text-white/60">{item.fieldName}</span>
+                    <li
+                      key={index}
+                      className="flex items-center justify-center xl:justify-start gap-4"
+                    >
+                      <span className="text-white/60">{item.fieldName}</span>
 
-    {item.fieldName === "Email" ? (
-      <a
-        href={`mailto:${item.fieldValue}`}
-        className="text-accent hover:underline"
-      >
-        {item.fieldValue}
-      </a>
-    ) : item.icon ? (
-      <a
-        href={item.fieldValue}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 rounded-md bg-[#2a2a30] px-3 py-1.5 text-sm text-accent hover:bg-[#32323a] transition"
-      >
-        <img src={item.icon} alt={item.label} className="h-4 w-4" />
-        {item.label}
-      </a>
-    ) : (
-      <span className="text-xl">{item.fieldValue}</span>
-    )}
-  </li>
-))}
-
-
+                      {item.fieldName === "Email" ? (
+                        <a
+                          href={`mailto:${item.fieldValue}`}
+                          className="text-accent hover:underline"
+                        >
+                          {item.fieldValue}
+                        </a>
+                      ) : item.icon ? (
+                        <a
+                          href={item.fieldValue}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-md bg-[#2a2a30] px-3 py-1.5 text-sm text-accent hover:bg-[#32323a] transition"
+                        >
+                          <img src={item.icon} alt={item.label} className="h-4 w-4" />
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span className="text-xl">{item.fieldValue}</span>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </TabsContent>
