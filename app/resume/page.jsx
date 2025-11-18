@@ -7,7 +7,7 @@ import {
   FaReact,
   FaFigma,
   FaNodeJs,
-  FaPython 
+  FaPython,
 } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiMysql, SiC } from "react-icons/si";
 import { SiR } from "react-icons/si";
@@ -110,23 +110,26 @@ const experience = {
         "JavaScript, HTML, CSS, YouTube API for async communication and dynamic UI updates.",
       ],
     },
-    // 🔻 UPDATED: Independent Research (recruiter-friendly)
     {
       company: "Independent Research",
-      position: "Understanding the Canadian Interventional Radiology Landscape Through the Canadian Association of Interventional Radiology (CAIR) database: a descriptive study",
+      position:
+        "Understanding the Canadian Interventional Radiology Landscape Through the Canadian Association of Interventional Radiology (CAIR) database: a descriptive study",
       duration: "2025",
-      link: "https://github.com/mrfchang03/Population_Geographical-Statistics",
+      link: "https://journals.sagepub.com/doi/10.1177/08465371251385534",
+      github: "https://github.com/mrfchang03/Population_Geographical-Statistics",
       bullets: [
         "Published peer-reviewed article “Understanding the Canadian Interventional Radiology Landscape” in the Canadian Association of Radiologists Journal (DOI: 10.1177/08465371251385534).",
-        "Processed and linked 1.3M Canadian postal codes (PCCF) from raw .txt files using Python/pandas, building a reproducible ETL pipeline.",
+        "Processed and linked 1.3 million Canadian postal codes (PCCF) from raw .txt files using Python/pandas, building a fully reproducible ETL pipeline.",
         "Mapped postal codes to Statistics Canada census divisions for national geospatial analysis; prepared validated datasets for an IR disparities study (approved by CARJ).",
-        "Optimized large-scale joins and QA with Arrow strings/chunked I/O; documented data hygiene, validation checks, and outputs.",
+        "Optimized large-scale joins and QA with Arrow strings and chunked I/O; documented data hygiene, validation checks, and outputs.",
+        "Released a cleaned and documented version of the ETL/geospatial workflow on GitHub for transparency and reproducibility.",
       ],
     },
     {
       company: "Personal Project",
       position: "Portfolio Website",
-      link: "https://github.com/mrfchang03/your-portfolio", // or the deployed link if you have one
+      duration: "2025", // optional but looks nicer
+      link: "https://github.com/mrfchang03/your-portfolio",
       bullets: [
         "Designed and developed a personal portfolio website to showcase projects, resume, and contact information.",
         "Built with React, Next.js, Tailwind CSS for responsive design and modern UI components.",
@@ -136,7 +139,6 @@ const experience = {
   ],
 };
 
-// education data (left as-is; customize later if you like)
 const education = {
   icon: "/assets/resume/cap.svg",
   title: "My Education",
@@ -151,7 +153,6 @@ const education = {
   ],
 };
 
-// skills data
 const skills = {
   title: "My Skills",
   description:
@@ -173,14 +174,12 @@ const skills = {
 };
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { motion } from "framer-motion";
 
@@ -223,6 +222,7 @@ const Resume = () => {
                         className="bg-[#232329] p-6 rounded-xl flex flex-col justify-start items-start gap-2"
                       >
                         <span className="text-accent">{item.duration}</span>
+
                         {item.link ? (
                           <a
                             href={item.link}
@@ -237,10 +237,24 @@ const Resume = () => {
                             {item.position}
                           </h3>
                         )}
+
                         <div className="flex items-center gap-3">
                           <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
                           <p className="text-white/60">{item.company}</p>
                         </div>
+
+                      
+                        {item.github && (
+                          <a
+                            href={item.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-md bg-[#2a2a30] px-3 py-1.5 text-sm text-accent hover:bg-[#32323a] transition"
+                          >
+                            GitHub
+                          </a>
+                        )}
+
                         {item.bullets && (
                           <ul className="list-disc list-inside text-white/70 text-sm mt-2 space-y-1">
                             {item.bullets.map((b, i) => (
