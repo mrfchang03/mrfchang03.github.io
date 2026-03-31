@@ -1,37 +1,29 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "./ui/button";
-import ThemeToggle from "./ThemeToggle"; // ⬅ add this
-
-// components
 import Nav from "./Nav";
 import MobileNav from "./MobileNav";
 
 const Header = () => {
   return (
-    <header className="py-8 xl:py-12 bg-surfaceLight dark:bg-primary text-textLight dark:text-textDark">
+    <header className="sticky top-0 z-50 glass-nav py-4">
       <div className="container mx-auto flex justify-between items-center">
-        {/* logo */}
-        <Link href="/">
-          <h1 className="text-4xl font-semibold">
-            <span className="text-accent dark:text-accentDark"></span>
-          </h1>
+        <Link href="/" className="opacity-90 hover:opacity-100 transition-opacity duration-200">
+          <img src="/mrc-logo.svg" alt="Matthew Chang" className="h-[72px] w-auto" />
         </Link>
 
-        {/* desktop nav & hire me button */}
-        <div className="hidden xl:flex items-center gap-6">
+        <div className="hidden xl:flex items-center gap-8">
           <Nav />
-          <Link href="/contact">
-            <Button radius="none">Hire me</Button>
-          </Link>
-          <ThemeToggle /> {/* ⬅ theme switch */}
+          <a
+            href="#contact"
+            className="px-5 py-2 bg-accent text-white font-medium text-sm rounded-lg hover:bg-accentHover transition-colors duration-200"
+          >
+            Hire Me
+          </a>
         </div>
 
-        {/* mobile nav */}
-        <div className="xl:hidden flex items-center gap-4">
+        <div className="xl:hidden">
           <MobileNav />
-          <ThemeToggle /> {/* optional on mobile too */}
         </div>
       </div>
     </header>

@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"], // enable dark mode via "dark" class
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
@@ -20,26 +19,19 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-jetbrainsMono)",
+      primary: "var(--font-inter)",
     },
     extend: {
       colors: {
-        // 🌙 Dark mode base
-        primary: "#0d1b2a",        // page background in dark
-        surfaceDark: "#1b263b",    // darker cards/sections
-        textDark: "#e6edf5",
-
-        // ☀️ Light mode base
-        surfaceLight: "#f7f9fc",   // page background in light
-        textLight: "#0d1b2a",
-
-        // 🎨 Accent colors
-          accent: "#ee9b00",
-          accentHover: "#d98a00",
-        // Extra utility color
-        stairs: "#3c6e71",         // used in your stair animation
+        canvas:      "#daeaf5",   // pale sky blue page base
+        surface:     "#eef5fb",   // near-white with blue tint
+        stroke:      "#a8cce0",   // medium blue border
+        ink:         "#0d1b2a",   // dark navy text
+        inkMuted:    "#3a5a78",   // medium navy muted text
+        accent:      "#2a6a9a",   // deep navy accent
+        accentHover: "#1e5580",
+        accentLight: "#c8e0f4",   // light blue tint
       },
-
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

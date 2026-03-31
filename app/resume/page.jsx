@@ -5,11 +5,11 @@ import {
   FaCss3,
   FaJs,
   FaReact,
-  FaFigma,
   FaNodeJs,
-  FaPython 
+  FaPython,
+  FaJava,
 } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiMysql, SiC } from "react-icons/si";
+import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiMysql, SiC, SiScikitlearn } from "react-icons/si";
 import { SiR } from "react-icons/si";
 
 // Helper to render clickable values (URLs, email, phone)
@@ -51,7 +51,7 @@ const renderFieldValue = (value) => {
 const about = {
   title: "About me",
   description:
-    "I’m a 3rd-year Computer Science student at Simon Fraser University passionate about building software that solves real problems. I enjoy learning quickly, collaborating with teams, and exploring new tools to bring ideas to life. Outside of coding, you can usually find me listening to music, working out, or playing badminton",
+    "I’m a 4th-year Computer Science student at Simon Fraser University with a focus on backend development, data engineering, and machine learning. I enjoy building software that solves real problems, and I’m always eager to learn. Outside of coding, you can find me listening to music, working out, or playing badminton.",
   info: [
     {
       fieldName: "Name",
@@ -85,7 +85,7 @@ const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Projects & Experience",
   description:
-    "Selected projects and research work highlighting React/Next.js, API integration, and data processing.",
+    "Projects and research spanning full-stack development, machine learning, and data engineering — including a published peer-reviewed study and production-ready APIs.",
   items: [
     {
       company: "Team Project",
@@ -124,9 +124,20 @@ const experience = {
       ],
     },
     {
+      company: "Team Project",
+      position: "Retail Sales Predictor",
+      duration: "2024",
+      link: "https://github.com/sya191/RetailSalesPredictor",
+      bullets: [
+        "Built a machine learning web app that forecasts retail sales from user-supplied parameters.",
+        "Trained and serialized a scikit-learn prediction model (sales_prediction_model.pkl) for production use.",
+        "Developed a Flask REST API to serve predictions and an interactive HTML/CSS visualization frontend.",
+      ],
+    },
+    {
       company: "Personal Project",
       position: "Portfolio Website",
-      link: "https://github.com/mrfchang03/your-portfolio", // or the deployed link if you have one
+      link: "https://github.com/mrfchang03/mrfchang03.github.io",
       bullets: [
         "Designed and developed a personal portfolio website to showcase projects, resume, and contact information.",
         "Built with React, Next.js, Tailwind CSS for responsive design and modern UI components.",
@@ -155,19 +166,19 @@ const education = {
 const skills = {
   title: "My Skills",
   description:
-    "I enjoy working across the stack, from building APIs with Python and Node.js to creating responsive web apps with React and Next.js. I’m comfortable with tools like TailwindCSS, SQL, and Pandas, and I’m always eager to pick up new technologies to improve my work.",
+    "Strongest in Python, Java, and data-heavy work. Comfortable across the full stack — Flask/Node.js backends, SQL databases, and React/Next.js frontends. Actively working with pandas, scikit-learn, and statistical tooling.",
   skillList: [
-    { icon: <FaHtml5 />, name: "html 5" },
-    { icon: <FaCss3 />, name: "css 3" },
-    { icon: <FaJs />, name: "javascript" },
+    { icon: <FaPython />, name: "python" },
+    { icon: <FaJava />, name: "java" },
+    { icon: <SiScikitlearn />, name: "scikit-learn" },
+    { icon: <SiMysql />, name: "sql" },
     { icon: <FaReact />, name: "react.js" },
     { icon: <SiNextdotjs />, name: "next.js" },
-    { icon: <SiTailwindcss />, name: "tailwind.css" },
     { icon: <FaNodeJs />, name: "node.js" },
-    { icon: <FaPython />, name: "python" },
+    { icon: <SiTailwindcss />, name: "tailwind.css" },
+    { icon: <FaJs />, name: "javascript" },
     { icon: <SiCplusplus />, name: "c++" },
     { icon: <SiC />, name: "c" },
-    { icon: <SiMysql />, name: "sql" },
     { icon: <SiR />, name: "R / RStudio" },
   ],
 };

@@ -42,7 +42,7 @@ const Photo = () => {
                 width={inner}
                 height={inner}
                 rx={RX}
-                stroke="#ee9b00" // orange stroke
+                stroke="#2a6a9a" // orange stroke
                 strokeWidth={layer.width}
                 strokeLinecap="round"
                 strokeLinejoin="round"
