@@ -6,7 +6,8 @@ import {
   FaJs,
   FaReact,
   FaNodeJs,
-  FaPython 
+  FaPython,
+  FaJava 
 } from "react-icons/fa";
 import { SiTailwindcss, SiNextdotjs, SiCplusplus, SiMysql, SiC, SiScikitlearn } from "react-icons/si";
 import { SiR } from "react-icons/si";
