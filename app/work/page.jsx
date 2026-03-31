@@ -22,36 +22,47 @@ import WorkSliderBtns from "@/components/WorkSliderBtns";
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
+    category: "fullstack",
+    title: "Rave Routes",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
+      "Web app for music fans to track artists' live events and plan travel. Integrates OpenAI for personalized itineraries and Amadeus API for real-time flight and hotel data.",
+    stack: [{ name: "React" }, { name: "Flask" }, { name: "Python" }, { name: "OpenAI API" }],
     image: "/assets/work/thumb1.png",
     live: "",
-    github: "",
+    github: "https://github.com/mrfchang03/Rave-Routes",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
+    category: "machine learning",
+    title: "Retail Sales Predictor",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }, { name: "Node.js" }],
+      "ML-powered web app that forecasts retail sales from user-supplied parameters. Trained prediction model served via a Flask REST API with an interactive visualization frontend.",
+    stack: [{ name: "Python" }, { name: "Flask" }, { name: "scikit-learn" }, { name: "HTML/CSS" }],
     image: "/assets/work/thumb2.png",
     live: "",
-    github: "",
+    github: "https://github.com/sya191/RetailSalesPredictor",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
+    category: "data engineering",
+    title: "Canadian IR Landscape Research",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate magnam modi.",
-    stack: [{ name: "Next.js" }, { name: "Tailwind.css" }],
+      "ETL pipeline processing 1.3M Canadian postal codes for a published peer-reviewed geospatial study on interventional radiology access disparities across census divisions.",
+    stack: [{ name: "Python" }, { name: "pandas" }, { name: "SQL" }],
     image: "/assets/work/thumb3.png",
     live: "",
-    github: "",
+    github: "https://github.com/mrfchang03/Population_Geographical-Statistics",
+  },
+  {
+    num: "04",
+    category: "frontend",
+    title: "Pomodoro Chrome Extension",
+    description:
+      "Chrome extension combining the Pomodoro technique with lo-fi YouTube streams. Features multi-tab sync and visual work/rest cycle progress indicators.",
+    stack: [{ name: "JavaScript" }, { name: "HTML" }, { name: "CSS" }, { name: "YouTube API" }],
+    image: "/assets/work/thumb1.png",
+    live: "",
+    github: "https://github.com/zachjohnston/pomodoro-extension",
   },
 ];
 

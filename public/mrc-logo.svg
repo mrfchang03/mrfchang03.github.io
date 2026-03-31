@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" width="620" height="120">
+  <!-- M mark: spans y=20 to y=90 (70px tall) -->
+  <path d="M30 90 L30 20 L75 62 L120 20 L120 90" fill="none" stroke="#111111" stroke-width="12" stroke-linecap="square" stroke-linejoin="miter"></path>
+
+  <!-- MATTHEW CHANG: cap-top aligned to y=20 (baseline = 20 + 0.72*40 ≈ 49) -->
+  <text x="150" y="54" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="28" font-weight="600" letter-spacing="5" fill="#111111">MATTHEW CHANG</text>
+
+  <text x="152" y="84" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="13" font-weight="400" letter-spacing="9" fill="#777777">RUO-FAN</text>
+</svg>

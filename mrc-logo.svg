@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 310" width="400" height="310">
+  <!-- Bold geometric M mark -->
+  <path d="M120 175 L120 45 L200 120 L280 45 L280 175" fill="none" stroke="#1a1a1a" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+  <!-- Name tucked underneath -->
+  <text x="200" y="228" text-anchor="middle" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="36" font-weight="500" letter-spacing="6" fill="#1a1a1a">MATTHEW CHANG</text>
+  <text x="200" y="264" text-anchor="middle" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="22" font-weight="400" letter-spacing="10" fill="#888888">RUO-FAN</text>
+</svg>

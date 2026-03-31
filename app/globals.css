@@ -3,48 +3,110 @@
 @tailwind utilities;
 
 @layer base {
-  /* Force a unified, 1s transition on EVERY property */
-  *, *::before, *::after {
-    transition: all 1000ms ease-in-out !important;
+  html {
+    scroll-behavior: smooth;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      transition: none !important;
-    }
+  body {
+    @apply font-primary text-ink antialiased leading-normal;
+    /* Powder blue brushed metal — pale sky-blue multi-band gradient */
+    background: linear-gradient(
+      135deg,
+      #c4dcee 0%,
+      #d0e4f4 15%,
+      #daeaf5 30%,
+      #cce0f0 50%,
+      #c0d8ec 65%,
+      #cee2f2 80%,
+      #c8dff0 100%
+    );
+    min-height: 100vh;
   }
 
-  html, body, #__next { @apply h-full; }
-
-  /* Dark is default */
-  body { @apply font-primary antialiased leading-loose bg-primary text-textDark; }
-
-  /* Light when .dark is removed */
-  html:not(.dark) body { @apply bg-surfaceLight text-textLight; }
-
-  /* Typography */
-  .h1 { @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold; }
-  .h2 { @apply text-[36px] xl:text-[48px] leading-[1.1] font-semibold; }
+  .h1 { @apply text-[48px] xl:text-[72px] leading-[1.1] font-bold tracking-tight; }
+  .h2 { @apply text-[32px] xl:text-[42px] leading-[1.1] font-bold tracking-tight; }
   .h3 { @apply text-[20px] xl:text-[24px] leading-[1.1] font-semibold; }
 
-  /* Links — orange accent */
-  a { @apply text-accent hover:text-accentHover underline-offset-4 hover:underline; }
+  a { @apply no-underline; }
 
-  .text-outline { -webkit-text-stroke: 1px #ffffff; }
-  .text-outline-hover { -webkit-text-stroke: 1px #ee9b00; }
-
-  ::selection { background: theme(colors.accent / 0.25); }
-
-  img, video, canvas, svg { @apply max-w-full h-auto; }
+  ::selection { background: rgba(42, 106, 154, 0.20); }
 }
 
 @layer components {
-  .card-surface { @apply rounded-xl p-6 bg-surfaceDark/70 shadow-sm backdrop-blur; }
-  html:not(.dark) .card-surface { @apply bg-white/70 shadow-sm; }
+  /* ── Powder blue polished bubble ──
+     Blue-tinted white shine peak at ~36%, pale blue at edges. */
+  .bubble {
+    background: linear-gradient(
+      145deg,
+      #dce8f5 0%,
+      #e8f2fa 10%,
+      #f5faff 22%,
+      #ffffff 36%,    /* ← shine peak */
+      #f8fbff 46%,
+      #eef4fb 60%,
+      #e4eef8 75%,
+      #ecf3fa 90%,
+      #f0f6fc 100%
+    );
+    border: 1px solid rgba(140, 190, 220, 0.75);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(20, 60, 100, 0.08),
+      0 1px 3px rgba(20, 50, 90, 0.08),
+      0 6px 20px rgba(15, 45, 85, 0.12),
+      0 28px 56px rgba(10, 35, 75, 0.09);
+  }
 
-  .btn-accent { @apply inline-flex items-center justify-center gap-2 px-4 py-2 font-semibold bg-accent text-white hover:bg-accentHover; }
-}
+  /* ── Blue recessed card ──
+     Deeper blue than the bubble, stamped into the surface. */
+  .inset-card {
+    background: linear-gradient(
+      145deg,
+      #b8d4ea 0%,
+      #c4dcf0 18%,
+      #cce2f2 35%,
+      #c8ddef 55%,
+      #bcd4e8 75%,
+      #c2d8ec 100%
+    );
+    border: 1px solid rgba(120, 175, 210, 0.85);
+    box-shadow:
+      inset 0 2px 6px rgba(20, 60, 110, 0.14),
+      inset 0 1px 2px rgba(15, 50, 100, 0.10),
+      0 1px 0 rgba(255, 255, 255, 0.60);
+    transition: border-color 0.2s ease;
+  }
 
-@layer utilities {
-  .min-h-screen-safe { min-height: 100svh; }
+  .inset-card:hover {
+    border-color: rgba(42, 106, 154, 0.55);
+  }
+
+  /* ── Small blue floating chip ── */
+  .stat-card {
+    background: linear-gradient(
+      145deg,
+      #dce8f5 0%,
+      #eaf3fa 18%,
+      #ffffff 38%,    /* ← shine peak */
+      #f5fbff 52%,
+      #eef4fb 72%,
+      #f2f7fc 100%
+    );
+    border: 1px solid rgba(140, 190, 220, 0.75);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      0 2px 8px rgba(20, 55, 95, 0.10),
+      0 8px 24px rgba(15, 45, 85, 0.09);
+  }
+
+  /* ── Powder blue frosted glass nav ── */
+  .glass-nav {
+    background: rgba(218, 238, 250, 0.80);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(140, 190, 220, 0.55);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.75),
+      0 2px 16px rgba(20, 55, 100, 0.10);
+  }
 }

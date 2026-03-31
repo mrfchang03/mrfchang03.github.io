@@ -6,30 +6,30 @@ import Link from "next/link";
 const services = [
   {
     num: "01",
-    title: "Web Development",
+    title: "Backend Development",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Building reliable REST APIs and server-side systems using Python (Flask) and Node.js, with experience in database design and third-party API integration.",
     href: "",
   },
   {
     num: "02",
-    title: "UI/UX Design",
+    title: "Machine Learning",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Applying ML techniques for predictive modeling, data analysis, and pattern recognition using Python, scikit-learn, and statistical methods.",
     href: "",
   },
   {
     num: "03",
-    title: "Logo Design",
+    title: "Data Engineering",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Designing and building ETL pipelines to process, clean, and transform large datasets using Python, pandas, and SQL for analysis-ready outputs.",
     href: "",
   },
   {
     num: "04",
-    title: "SEO",
+    title: "Full-Stack Web Apps",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+      "Developing end-to-end web applications with React/Next.js frontends and Python or Node.js backends, styled with Tailwind CSS.",
     href: "",
   },
 ];
